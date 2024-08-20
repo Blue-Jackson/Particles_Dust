@@ -1,0 +1,55 @@
+body {
+  margin: 0;
+  overflow: hidden;
+}
+
+#container {
+  overflow: hidden;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+
+#canvas-bg, #canvas-main {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+#cursor {
+  pointer-events: none;
+  position: absolute;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  background-color: rgba(255, 255, 255, 0.1);
+  z-index: 999;
+  transform: translateX(-50%) translateY(-50%);
+  box-shadow: 0px 0px 10px 1px rgba(222, 222, 222, 0.5);
+  animation: pulse-cursor 3s ease-in-out infinite;
+  mix-blend-mode: difference;
+  left: 10%;
+  top: 10%;
+}
+
+@keyframes pulse-cursor {
+  0% {
+    box-shadow: 0px 0px 8px 1px rgba(222, 222, 222, 0.4);
+  }
+  50% {
+    box-shadow: 0px 0px 12px 1px rgba(222, 222, 222, 0.6);
+  }
+  100% {
+    box-shadow: 0px 0px 8px 1px rgba(222, 222, 222, 0.4);
+  }
+}
+#fps-counter {
+  color: white;
+  margin: 0;
+  margin-left: 5px;
+  pointer-events: none;
+  z-index: 999;
+}
